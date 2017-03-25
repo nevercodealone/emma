@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-  $('.ui.dropdown').dropdown();
+  $('.ui.dropdown.languageselection').dropdown('set selected', 'af');
 
   $('.top input').keyup(debounce(function() {
     var phrase = $(this).val();
@@ -14,11 +14,13 @@ $(document).ready(function() {
 function getTranslation(phrase) {
   $('.output').hide();
   $('.cs-loader').fadeIn(50);
+  var targetLanguage = $('.menu .item.selected').data('code');
+  console.log(targetLanguage);
 
   $.ajax({
     url : "/api/translate",
-    type: "POST",
-    data : {phrase: phrase},
+    type: "GET",
+    data : {phrase: phrase, language: targetLanguage},
     success: function(data)
     {
         //data - response from server
