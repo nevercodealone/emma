@@ -97,6 +97,7 @@ color: #fdfdfd;
   overflow: hidden;
   font-size: 2em;
   background: #fdfdfd;
+  position: relative;
 }
 
 .translationview .content h1, h2 {
@@ -105,12 +106,18 @@ color: #fdfdfd;
 }
 
 .translationview .content .output {
-  margin-top: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 
 .translationview .content .translation {
-  font-size: 5em;
+  font-size: 4.5em;
 }
 
 .translationview .content .german, .pronounce {
