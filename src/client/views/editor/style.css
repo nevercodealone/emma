@@ -1,0 +1,137 @@
+.creation {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.rightgroup {
+  position: relative;
+}
+.rightgroup .presetlist {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: 100%;
+  background: #e0e0e0;
+  display: none;
+  list-style: none;
+  padding: 8px;
+  border-top: 2px solid;
+  border-color: #868686;
+  font-size: 1.2em;
+  color: #868686;
+  height: calc(100% - 38px);
+}
+.rightgroup .presetlist li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.phrases {
+  width: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.phrases .container ul {
+  min-height: 542px;
+}
+
+.presets {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.presets .container ul {
+  margin-top: 0;
+  border-top: none;
+}
+
+.creation .container {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.creation .container .input {
+  width: 100%;
+  height: 35px;
+}
+.creation .container .input button {
+  width: 50px;
+  border: none;
+  height: 100%;
+  padding: 0;
+  background: #868686;
+  color: #fff;
+  outline: none;
+}
+.creation .container input {
+  width: calc(100% - 50px);
+  border: 2px solid;
+  margin-top: 10px;
+  outline: none;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-color: #868686;
+  margin-top: 3px;
+  height: 100%;
+  margin: 0;
+}
+.creation .container h3 {
+  margin: 0;
+}
+.creation .container .selectedpreset {
+  margin-top: 20px;
+  padding: 8px;
+  background: #e0e0e0;
+  color: #868686;
+  cursor: pointer;
+  user-select: none;
+}
+.creation .container .selectedpreset i {
+  float: right;
+  height: 39px;
+  line-height: 39px;
+  width: 35px;
+  margin: 0;
+  margin-top: -8px;
+}
+.creation .container h2 {
+  border-bottom: 2px solid;
+  font-size: 1.3em;
+}
+.creation .container h2 i {
+  float: right;
+}
+
+.creation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  min-height: 500px;
+  border: 2px dotted;
+  border-color: #e0e0e0;
+}
+.creation ul li {
+  background: #fff;
+  margin-top: 2px;
+  padding: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.creation ul li:first-of-type {
+  margin-top: 0;
+}
+
+li.item {
+  list-style: none;
+  background: #fff;
+  margin-top: 2px;
+  padding: 8px;
+  cursor: pointer;
+  user-select: none;
+}

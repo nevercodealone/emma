@@ -1,1 +1,72 @@
-translator app
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Übersetzer</title>
+    <link rel="stylesheet" href="ext/semantic-ui/semantic.min.css" />
+    <link rel="stylesheet" href="global/style.css">
+    <link rel="stylesheet" href="views/translator/style.css">
+  </head>
+  <body>
+
+    <div class="translationview">
+      <div class="sidebar left">
+        <div class="container">
+          <div class="top">
+            <img src="/global/img/logo.gif" alt="" class="logo">
+
+            <input type="text" placeholder="zu übersetzender Text..." class="main" spellcheck="false"></input>
+            <div class="options">
+              <div class="ui fluid search selection dropdown">
+                <input type="hidden" name="country">
+                <i class="dropdown icon"></i>
+                <div class="default text">Herkunft wählen</div>
+                  <div class="menu">
+                  <div class="item" data-value="af"><i class="af flag"></i>Afghanistan</div>
+                  <div class="item" data-value="ax"><i class="ax flag"></i>Aland Islands</div>
+                  <div class="item" data-value="al"><i class="al flag"></i>Albania</div>
+                  <div class="item" data-value="dz"><i class="dz flag"></i>Algeria</div>
+                  <div class="item" data-value="as"><i class="as flag"></i>American Samoa</div>
+                  <div class="item" data-value="ad"><i class="ad flag"></i>Andorra</div>
+                  <div class="item" data-value="ao"><i class="ao flag"></i>Angola</div>
+                </div>
+               </div>
+            </div>
+          </div>
+          <div class="bottom">
+            <h2><i class="food icon"></i>Essensausgabe</h2>
+            <ul>
+              <li>Was möchtest du essen?</li>
+              <li>Wie alt bist du?</li>
+            </ul>
+          </div>
+          <div class="menu">
+          </div>
+        </div>
+      </div>
+
+      <div class="content right">
+          <div class="cs-loader">
+            <div class="cs-loader-inner">
+              <label>	●</label>
+              <label>	●</label>
+              <label>	●</label>
+              <label>	●</label>
+              <label>	●</label>
+              <label>	●</label>
+            </div>
+        </div>
+        <div class="output">
+          <h2 class="german">woher kommst du?</h2>
+          <h1 class="translation">من اين انت؟</h1>
+          <h2 class="pronounce">min 'ayn ant?</h2>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <script src="/global/script.js"></script>
+    <script src="/views/translator/script.js"></script>
+  </body>
+</html>

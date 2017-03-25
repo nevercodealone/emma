@@ -1,0 +1,123 @@
+.translationview {
+  height: 100%;
+}
+
+.translationview .container {
+  width: 90%;
+  margin-left: 5%;
+  height: 100%;
+}
+
+.translationview .sidebar.left {
+  width: 400px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.translationview .sidebar.left .top .options {
+  margin-top: 5px;
+}
+
+.translationview .sidebar.left .top input.main {
+  width: 100%;
+  border: 2px solid #bfbfbf;
+  outline: none;
+  font-size: 1.3em;
+  padding: 8px 12px;
+  transition: all 0.2s;
+  margin-top: 40px;
+}
+
+.translationview .sidebar.left .top .dropdown {
+  border-radius: 0;
+}
+
+.translationview .sidebar.left .top input:focus {
+  border-color: #f3b55c;
+}
+
+.translationview .sidebar.left .bottom h2 {
+  margin-top: 40px;
+  font-weight: 300;
+  border-bottom: 2px solid;
+  color: #424242;
+  border-color: #bfbfbf;
+  text-align: left;
+}
+
+.translationiew input::-webkit-input-placeholder,
+.translationiew textarea::-webkit-input-placeholder {
+color: #e1e1e1;
+}
+.translationiew input:-moz-placeholder,
+.translationiew textarea:-moz-placeholder {
+color: #fdfdfd;
+}
+.translationiew input::-moz-placeholder,
+.translationiew textarea::-moz-placeholder {
+color: #fdfdfd;
+}
+.translationiew input:-ms-input-placeholder,
+.translationiew textarea:-ms-input-placeholder {
+color: #fdfdfd;
+}
+
+.translationview .sidebar.left .top img.logo {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.translationview .sidebar.left .bottom ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.translationview .sidebar.left .bottom ul li {
+    width: 100%;
+    padding: 6px 0px;
+    font-size: 1.2em;
+}
+
+.translationview .sidebar.left .bottom ul li:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.translationview .content {
+  width: calc(100% - 400px);
+  height: 100%;
+  margin-left: 400px;
+  overflow: hidden;
+  font-size: 2em;
+  background: #fdfdfd;
+}
+
+.translationview .content h1, h2 {
+  text-align: center;
+  font-weight: 300;
+}
+
+.translationview .content .output {
+  margin-top: 300px;
+}
+
+
+.translationview .content .translation {
+  font-size: 5em;
+}
+
+.translationview .content .german, .pronounce {
+  color: #dfdfdf;
+}
+
+
+.output, .cs-loader {
+  display:none;
+}

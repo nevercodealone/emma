@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans';
+  background: #fdfdfd;
+}
+
+
+
+
+.footer {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  line-height: 35px;
+  font-weight: bold;
+  color: #668791;
+  display: none;
+}
+
+.footer img {
+    width: 70px;
+    margin-left: 5px;
+    margin-right: 5px;
+    transform: translateY(5px);
+}
+
+
+/* Loginform */
+
+.loginform {
+  width: 100%;
+  height: 100%;
+  background: #fdfdfd;
+}
+
+.loginform .ui.middle.aligned.center.aligned.grid {
+    width: 500px;
+    padding-top: 200px;
+    margin: 0 auto;
+}
+
+.loginform .submit.button {
+  background: #ff9753;
+}
+
+
+
+
+
+/* Animations */
+
+.cs-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: calc(100% - 400px);
+  z-index: 100;
+  left: 400px;
+}
+
+.cs-loader-inner {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  position: absolute;
+  width: calc(100% - 200px);
+  color: #FFF;
+  padding: 0 100px;
+  text-align: center;
+  color: #eb8000;
+  left: 50%;
+}
+
+.cs-loader-inner label {
+  font-size: 20px;
+  opacity: 0;
+  display:inline-block;
+}
+
+@keyframes lol {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  33% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  66% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+}
+
+@-webkit-keyframes lol {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-300px);
+  }
+  33% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+  }
+  66% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(300px);
+  }
+}
+
+.cs-loader-inner label:nth-child(6) {
+  -webkit-animation: lol 3s infinite ease-in-out;
+  animation: lol 3s infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(5) {
+  -webkit-animation: lol 3s 100ms infinite ease-in-out;
+  animation: lol 3s 100ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(4) {
+  -webkit-animation: lol 3s 200ms infinite ease-in-out;
+  animation: lol 3s 200ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(3) {
+  -webkit-animation: lol 3s 300ms infinite ease-in-out;
+  animation: lol 3s 300ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(2) {
+  -webkit-animation: lol 3s 400ms infinite ease-in-out;
+  animation: lol 3s 400ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(1) {
+  -webkit-animation: lol 3s 500ms infinite ease-in-out;
+  animation: lol 3s 500ms infinite ease-in-out;
+}
+
+.glow {
+  animation-duration: 1s;
+  animation-name: glow;
+}
+
+@keyframes glow {
+    0%   {background-color: #fff;}
+    50%  {background-color: #ffd96b;}
+    100% {background-color: #fff;}
+}
+
+/* end of animations */
