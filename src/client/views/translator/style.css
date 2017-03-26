@@ -12,7 +12,7 @@
   width: 400px;
   height: 100%;
   background: #fff;
-  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   position: absolute;
   left: 0;
   top: 0;
@@ -55,15 +55,15 @@ color: #e1e1e1;
 }
 .translationiew input:-moz-placeholder,
 .translationiew textarea:-moz-placeholder {
-color: #fdfdfd;
+color: #f7f7f7;
 }
 .translationiew input::-moz-placeholder,
 .translationiew textarea::-moz-placeholder {
-color: #fdfdfd;
+color: #f7f7f7;
 }
 .translationiew input:-ms-input-placeholder,
 .translationiew textarea:-ms-input-placeholder {
-color: #fdfdfd;
+color: #f7f7f7;
 }
 
 .translationview .sidebar.left .top img.logo {
@@ -96,7 +96,7 @@ color: #fdfdfd;
   margin-left: 400px;
   overflow: hidden;
   font-size: 2em;
-  background: #fdfdfd;
+  background: #f7f7f7;
   position: relative;
 }
 

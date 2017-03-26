@@ -1,0 +1,17 @@
+
+
+.loginform {
+  width: 100%;
+  height: 100%;
+  background: #f7f7f7;
+}
+
+.loginform .ui.middle.aligned.center.aligned.grid {
+    width: 500px;
+    padding-top: 200px;
+    margin: 0 auto;
+}
+
+.loginform .submit.button {
+  background: #ff9753;
+}
