@@ -14,7 +14,7 @@ $(document).ready(function() {
     console.log(p);
 
     $.ajax({
-      url : "/auth_user",
+      url : "/login",
       type: "POST",
       data : {
         email: e,
@@ -24,9 +24,9 @@ $(document).ready(function() {
       {
           //data - response from server
           console.log(data);
-          if (data.auth_token) {
-            createCookie('auth_token', data.auth_token, 1);
-            window.location.replace("/translations");
+          if (data.token) {
+            createCookie('token', data.token, 1);
+            window.location = '/translator';
           }
 
       },
