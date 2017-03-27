@@ -1,5 +1,7 @@
-const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
-mongoose.connect(process.env.database);
+const config = require('../../../knexfile');
 
-module.exports = mongoose;
+var knex = require('knex')(config['development']);
+
+var bookshelf = require('bookshelf')(knex);
+
+module.exports = bookshelf;

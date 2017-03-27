@@ -1,11 +1,22 @@
-const mongoose = require('../index');
+const bookshelf = require('../index');
 
-const userSchema = new mongoose.Schema({
-  email: String,
-  password: String,
-  role: String
-})
+var User = bookshelf.Model.extend({
+    tableName: 'users',
+    hasTimestamps: true,
 
-const User = mongoose.model('User', userSchema);
+    verifyPassword: function(password) {
+        return this.get('password') === password;
+    },
+    toTokenFormat: function() {
+      return {
+        id: this.get('id'),
+        role: this.get('role')
+      }
+    }
+}, {
+    byEmail: function(email) {
+        return this.forge().query({where:{ email: email }}).fetch();
+    }
+});
 
 module.exports = User;

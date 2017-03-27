@@ -1,7 +1,10 @@
 const express = require('express');
 const axios = require('axios');
 
+const User = require('../../database/models/User');
+
 const apiRouter = express.Router();
+
 
 // -> /api routes
 
@@ -50,6 +53,11 @@ apiRouter.get('/translate', function(req, res) {
       })
     })
 
+
+})
+
+
+apiRouter.post('/phrase', (req, res) => {
 
 })
 

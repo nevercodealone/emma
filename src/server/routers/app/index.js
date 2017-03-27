@@ -32,39 +32,28 @@ appRouter.post('/login', (req, res) => {
     })
   }
 
-  User.findOne({email: email}, (err, user) => {
-    if (err) {
-      // user not found
-      throw err;
-    };
-
-    if (!user) {
-      return res.json({ success: false, message: 'User not found.'})
-    }
-
-    if (user) {
-      if (user.password != password) {
-        return res.json({ success: false, message: 'Wrong password.'})
-      }
-
-      if (user.password == password) {
-        // success
-        var userData = {
-          id: user._id,
-          role: user.role
-        }
-        var token = jwt.sign(userData, process.env.secret, {
-          expiresIn: '1d'
-        });
-
-        return res.json({
+  User
+    .forge({ email })
+    .fetch()
+    .then(user => {
+      if (user.get('password') === password) {
+        console.log('loggin in user...')
+        let token = jwt.sign(user.toTokenFormat(), process.env.secret, { expiresIn: '1d' });
+        res.json({
           success: true,
-          message: 'Enjoy the token',
           token: token
         })
+      } else {
+        throw new Error();
       }
-    }
-  })
+    })
+    .catch(error => {
+      console.log(error);
+      return res.json({
+        success: false,
+        message: 'something went wrong'
+      })
+    })
 })
 
 appRouter.get('/translator', (req, res) => {
