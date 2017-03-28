@@ -6,6 +6,16 @@ $(document).ready(function() {
 
   $('.ui.dropdown.languageselection').dropdown('set selected', 'af');
 
+  $('.languageselection').on('change', function() {
+    var phrase = $('.top input').val();
+
+    setTimeout(function() {
+      var targetLanguage = $('.menu .item.selected').data('code');
+      getTranslation(phrase, targetLanguage);
+    }, 10)
+
+  })
+
   getPresetData(function(presets) {
     state.presets = presets;
     $('.bottom h2').text(presets[0].name);
@@ -17,14 +27,17 @@ $(document).ready(function() {
     $('.bottom').show();
   })
 
-  $('.top input').keyup(debounce(function() {
+  $('.top input.main').keyup(debounce(function() {
     var phrase = $(this).val();
-    getTranslation(phrase);
+    var targetLanguage = $('.menu .item.selected').data('code');
+    getTranslation(phrase, targetLanguage);
   }, 300));
 
   $('.bottom ul').on('click', 'li', function(e) {
     var text = $(this).text();
-    getTranslation(text);
+    $('.top input.main').val(text);
+    var targetLanguage = $('.menu .item.selected').data('code');
+    getTranslation(text, targetLanguage);
   })
 
 })
@@ -47,16 +60,15 @@ function getPresetData(callback) {
 }
 
 
-function getTranslation(phrase) {
+function getTranslation(phrase, languageCode) {
   $('.output').hide();
   $('.cs-loader').fadeIn(50);
-  var targetLanguage = $('.menu .item.selected').data('code');
-  console.log(targetLanguage);
+
 
   $.ajax({
     url : "/api/translate",
     type: "GET",
-    data : {phrase: phrase, language: targetLanguage},
+    data : {phrase: phrase, language: languageCode},
     success: function(data)
     {
         //data - response from server
