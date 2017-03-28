@@ -40,6 +40,10 @@
   border-color: #f3b55c;
 }
 
+.translationview .bottom {
+  display: none;
+}
+
 .translationview .sidebar.left .bottom h2 {
   margin-top: 40px;
   font-weight: 300;

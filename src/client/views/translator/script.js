@@ -1,14 +1,50 @@
+var state = {
+  presets: []
+}
 
 $(document).ready(function() {
 
   $('.ui.dropdown.languageselection').dropdown('set selected', 'af');
+
+  getPresetData(function(presets) {
+    state.presets = presets;
+    $('.bottom h2').text(presets[0].name);
+    $('.bottom ul').empty();
+    presets[0].phrases.forEach(function(phrase) {
+      var phraseLi = '<li>' + phrase.text + '</li>';
+      $('.bottom ul').append(phraseLi);
+    })
+    $('.bottom').show();
+  })
 
   $('.top input').keyup(debounce(function() {
     var phrase = $(this).val();
     getTranslation(phrase);
   }, 300));
 
+  $('.bottom ul').on('click', 'li', function(e) {
+    var text = $(this).text();
+    getTranslation(text);
+  })
+
 })
+
+function getPresetData(callback) {
+  $.ajax({
+    url : "/api/presets",
+    type: "GET",
+    success: function(data)
+    {
+      if (callback) {
+        callback(data);
+      }
+    },
+    error: function ()
+    {
+      console.log('error');
+    }
+  })
+}
 
 
 function getTranslation(phrase) {

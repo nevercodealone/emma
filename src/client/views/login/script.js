@@ -22,7 +22,6 @@ $(document).ready(function() {
       },
       success: function(data)
       {
-          //data - response from server
           console.log(data);
           if (data.token) {
             createCookie('token', data.token, 1);
