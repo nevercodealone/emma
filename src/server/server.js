@@ -3,12 +3,14 @@ const app = require('./app');
 const port = '8080';
 
 const User = require('./database/models/User');
+const Phrases = require('./database/collections/Phrases');
+const Preset = require('./database/models/Preset');
 
 
 function createMe() {
   User
     .forge({
-      email: 'lucanathan@live.com',
+      email: 'test@test.com',
       password: 'sehrsicher'
     })
     .save()
@@ -30,6 +32,21 @@ function updateMe() {
       console.log(err);
     })
 }
+
+
+User
+  .forge()
+  .fetch()
+  .then(user => {
+    if (user) {
+      user.phrasesForClient()
+        .then(phrases => phrases);
+    } else {
+      console.log('no user')
+    }
+  })
+
+
 
 
 

@@ -15,18 +15,25 @@ exports.up = function(knex, Promise) {
             table.increments('id').primary();
             table.string('text');
             table.integer('author_id')
-                 .references('id')
-                 .inTable('users');
+                 .references('users.id');
+            table.timestamps();
         }),
 
         knex.schema.createTable('presets', function(table){
             table.increments('id').primary();
             table.string('name');
             table.integer('author_id')
-                 .references('id')
-                 .inTable('users');
+                 .references('users.id');
             table.timestamps();
-        })
+        }),
+
+        knex.schema.createTable('presets_phrases', function(table){
+            table.increments('id').primary();
+            table.integer('preset_id')
+                 .references('presets.id');
+            table.integer('phrase_id')
+                  .references('phrases.id');
+        }),
     ])
 };
 
