@@ -1,6 +1,8 @@
 const config = require('../../../knexfile');
 
-var knex = require('knex')(config['development']);
+const environment = process.env.environment;
+
+var knex = require('knex')(config[environment]);
 
 var bookshelf = require('bookshelf')(knex);
 bookshelf.plugin('registry');

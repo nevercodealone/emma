@@ -21,6 +21,7 @@
     "jsonwebtoken": "^7.3.0",
     "knex": "^0.12.9",
     "mongoose": "^4.9.1",
+    "mysql": "^2.13.0",
     "sqlite3": "^3.1.8"
   },
   "devDependencies": {
