@@ -21,14 +21,14 @@ apiRouter.get('/translate', function(req, res) {
   let phraseEncoded = encodeURIComponent(phrase);
 
   if (!phrase) {
-    res.json({
+    return res.json({
       success: false,
       message: 'No phrase provided'
     })
   }
 
   if (!targetLn) {
-    res.json({
+    return res.json({
       success: false,
       message: 'No target language provided'
     })
@@ -40,7 +40,7 @@ apiRouter.get('/translate', function(req, res) {
     .then((response) =>  {
       let translatedText = response.data.data.translations[0].translatedText;
 
-      res.json({
+      return res.json({
         success: true,
         german: phrase,
         translation: translatedText,
@@ -49,7 +49,7 @@ apiRouter.get('/translate', function(req, res) {
     })
     .catch((error) => {
       console.log(error);
-      res.json({
+      return res.json({
         success: false,
         message: 'Error fetching the google API'
       })
