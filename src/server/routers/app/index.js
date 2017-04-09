@@ -8,7 +8,7 @@ const User = require('../../database/models/User');
 // -> /app routes
 
 appRouter.get('/', (req, res) => {
-  res.render('home');
+  res.render('pages/default');
 })
 
 appRouter.get('/login', (req, res) => {
