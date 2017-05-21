@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %title GymBot Backend
+    %link{ href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700', rel: 'stylesheet', type: 'text/css'}
+    = stylesheet_link_tag 'backend', media: 'all'
+    = javascript_pack_tag 'backend'
+    = csrf_meta_tags
+  %body
+    %nav
+      = link_to 'Kategorien', backend_categories_path
+    = yield

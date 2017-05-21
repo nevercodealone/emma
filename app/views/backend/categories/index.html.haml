@@ -1,0 +1,24 @@
+%h2
+  Categories
+
+= link_to 'new', new_backend_category_path
+
+%table
+  %thead
+    %tr
+      %th
+        id
+      %th
+        name
+      %th
+        functions
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td
+          = category.id
+        %td
+          = category.name
+        %td
+          = link_to 'edit', edit_backend_category_path(category)
+          = link_to 'delete', backend_category_path(category), method: "delete", data: { confirm: "Orly?" }
