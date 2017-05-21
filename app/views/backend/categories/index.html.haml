@@ -7,18 +7,18 @@
   %thead
     %tr
       %th
-        id
+        Id
       %th
-        name
+        Name
       %th
-        functions
+        Funktionen
   %tbody
     - @categories.each do |category|
       %tr
         %td
           = category.id
         %td
-          = category.name
+          = link_to category.name, backend_category_phrases_path(category)
         %td
           = link_to 'edit', edit_backend_category_path(category)
           = link_to 'delete', backend_category_path(category), method: "delete", data: { confirm: "Orly?" }

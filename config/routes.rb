@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   namespace :backend do
-    resources :categories
+    resources :categories do
+      resources :phrases
+    end
     resources :languages
   end
 

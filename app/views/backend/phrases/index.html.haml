@@ -1,24 +1,33 @@
 %h2
-  Categories
+  Kategorie
+  = @category.name
 
-= link_to 'new', new_backend_category_path
+= link_to 'Neue Phrase anlegen', new_backend_category_phrase_path(@category)
 
+%h3
+  Phrasen
 %table
   %thead
     %tr
       %th
-        id
+        Id
       %th
-        name
+        Text
       %th
-        functions
+        Übersetzung
+      %th
+        Sprache
   %tbody
-    - @categories.each do |category|
+    - @phrases.each do |phrase|
       %tr
         %td
-          = category.id
+          = phrase.id
         %td
-          = category.name
+          = phrase.text
         %td
-          = link_to 'edit', edit_backend_category_path(category)
-          = link_to 'delete', backend_category_path(category), method: "delete", data: { confirm: "Orly?" }
+          = phrase.translation
+        %td
+          = phrase.language.name
+        %td
+          = link_to 'edit', edit_backend_category_phrase_path(@category, phrase)
+          = link_to 'delete', backend_category_phrase_path(@category, phrase), method: "delete", data: { confirm: "Orly?" }
