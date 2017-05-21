@@ -1,0 +1,7 @@
+= form_for [:backend, category] do |f|
+  %ul
+    %li
+      = f.label :name
+      = f.text_field :name
+    %li
+      = f.submit

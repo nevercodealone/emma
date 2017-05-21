@@ -1,0 +1,24 @@
+%h2
+  Sprachen
+
+= link_to 'Neue Sprache anlegen', new_backend_language_path
+
+%table
+  %thead
+    %tr
+      %th
+        id
+      %th
+        name
+      %th
+        functions
+  %tbody
+    - @languages.each do |language|
+      %tr
+        %td
+          = language.id
+        %td
+          = language.name
+        %td
+          = link_to 'edit', edit_backend_language_path(language)
+          = link_to 'delete', backend_language_path(language), method: "delete", data: { confirm: "Orly?" }

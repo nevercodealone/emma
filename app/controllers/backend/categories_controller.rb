@@ -11,7 +11,7 @@ class Backend::CategoriesController < Backend::BackendController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to backend_categories_path, notice: "Fitness Goal created"
+      redirect_to backend_categories_path, notice: "Category created"
     else
       render :new
     end
@@ -25,7 +25,7 @@ class Backend::CategoriesController < Backend::BackendController
     @category = Category.find(params[:id])
 
     if @category.update(category_params)
-      redirect_to backend_categories_path, notice: "Fitness Goal updated"
+      redirect_to backend_categories_path, notice: "Category updated"
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class Backend::CategoriesController < Backend::BackendController
     if @category.destroy
       redirect_to backend_categories_path, notice: "Category deleted"
     else
-      redirect_to backend_categories_path, error: "Can't delete"
+      redirect_to backend_categories_path, error: "Can't delete Category"
     end
   end
 
