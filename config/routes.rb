@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :phrases
     end
     resources :languages
+    root to: 'categories#index'
   end
 
   root 'application#index'
