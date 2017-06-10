@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     root to: 'categories#index'
   end
 
-  root 'application#index'
+  root 'frontend#index'
 end
