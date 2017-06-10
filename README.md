@@ -2,8 +2,8 @@
 
 ## Requirements
 
-Ruby 2.4.0
-Postgres for database
+- Ruby 2.4.0
+- Postgres for database
 
 a valid Google API key in .env (do not commit) or environment 'GOOGLE_API_KEY'.
 
@@ -22,5 +22,5 @@ This code is free as in beer.
 
 # Copyright
 
-Nevercodealone.de
-9elements.com
+- Nevercodealone.de
+- 9elements.com
