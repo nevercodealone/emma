@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
 
-Things you may want to cover:
+Ruby 2.4.0
+Postgres for database
 
-* Ruby version
+a valid Google API key in .env (do not commit) or environment 'GOOGLE_API_KEY'.
 
-* System dependencies
+## start
 
-* Configuration
+```
+bundle install
+rake db:create # create databases
+rake db:migrate # migrate databases - might be done again after a git pull
+rails s
+```
 
-* Database creation
+# License
 
-* Database initialization
+This code is free as in beer.
 
-* How to run the test suite
+# Copyright
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Nevercodealone.de
+9elements.com
