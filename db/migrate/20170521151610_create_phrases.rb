@@ -1,10 +1,11 @@
 class CreatePhrases < ActiveRecord::Migration[5.1]
   def change
     create_table :phrases do |t|
-      t.string :text
-      t.string :translation
+      t.text :text
+      t.text :translation
       t.references :language
       t.references :category
+      t.integer :sort_id, default: 0
 
       t.timestamps
     end
