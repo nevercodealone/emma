@@ -20,6 +20,15 @@ li {
   margin: 0 auto;
 }
 
+@media only screen and (max-device-width: 480px) {
+  .container {
+    width: auto;
+    margin: 0;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+  }
+}
+
 .main-header {
   margin-top: 2em;
   margin-bottom: 2em;
@@ -43,6 +52,16 @@ li {
       -webkit-appearance: none;
       color: white;
     }
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .main-header {
+    display: block;
+  }
+  nav {
+    margin-top: 0.5em;
+    text-align: left !important;
   }
 }
 
