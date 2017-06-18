@@ -1,1 +1,19 @@
 @import "reset";
+
+html, body {
+  background-color: #EE9E36;
+  color: white;
+  font-family: Helvetica, Arial, _sans;
+}
+
+.container {
+  width: 640px;
+  margin: 0 auto;
+}
+
+.main-header {
+  margin-top: 2em;
+  .logo {
+    margin-bottom: 0.5em;
+  }
+}

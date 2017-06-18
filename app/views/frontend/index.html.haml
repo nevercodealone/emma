@@ -1,19 +1,22 @@
-%header.main-header
-  %h1
-    Die Tafel
-  %nav
-    = select_tag "current_language", options_from_collection_for_select(@languages, "key", "name", current_language.key)
+.container
+  %header.main-header
+    .logo
+      = image_tag 'tafel-logo.svg', height: '64px'
+    %h1
+      Duisburger-Tafel e.V.
+    %nav
+      = select_tag "current_language", options_from_collection_for_select(@languages, "key", "name", current_language.key)
 
-%section.main-content
-  %ul
-    - @categories.each do |category|
-      %li
-        %h2
-          = category.name
-        %ol
-          - category.phrases.where(language: current_language).each do |phrase|
-            %li
-              .text
-                = phrase.text
-              .translation
-                = phrase.translation
+  %section.main-content
+    %ul
+      - @categories.each do |category|
+        %li
+          %h2
+            = category.name
+          %ol
+            - category.phrases.where(language: current_language).each do |phrase|
+              %li
+                .text
+                  = phrase.text
+                .translation
+                  = phrase.translation
