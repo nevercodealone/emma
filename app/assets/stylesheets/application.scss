@@ -6,6 +6,15 @@ html, body {
   font-family: Helvetica, Arial, _sans;
 }
 
+ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
 .container {
   width: 640px;
   margin: 0 auto;
@@ -13,7 +22,13 @@ html, body {
 
 .main-header {
   margin-top: 2em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 50% 50%;
   .logo {
     margin-bottom: 0.5em;
+  }
+  nav {
+    text-align: right;
   }
 }
