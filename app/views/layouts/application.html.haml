@@ -6,4 +6,20 @@
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
   %body
+    .container
+      %header.main-header
+        .column
+          .logo
+            = image_tag 'tafel-logo.svg', height: '64px'
+          %h1
+            Duisburger-Tafel e.V.
+        .column
+          %nav
+            = select_tag "current_language", options_from_collection_for_select(@languages, "key", "name", current_language.key)
     = yield
+    .container
+      %footer.main-footer
+        EMMA is developed open source by
+        = link_to 'Nevercodealone.de', 'http://nevercodealone.de'
+        and
+        = link_to '9elements.com', 'http://9elements.com'

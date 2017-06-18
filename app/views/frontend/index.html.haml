@@ -1,14 +1,4 @@
 .container
-  %header.main-header
-    .column
-      .logo
-        = image_tag 'tafel-logo.svg', height: '64px'
-      %h1
-        Duisburger-Tafel e.V.
-    .column
-      %nav
-        = select_tag "current_language", options_from_collection_for_select(@languages, "key", "name", current_language.key)
-
   %section.main-content
     %ul
       - @categories.each do |category|
