@@ -55,6 +55,23 @@ li {
   }
 }
 
-.main-footer {
+.main-content {
+  h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+
+  ol {
+    li {
+      .text {
+        padding: 1em;
+        background-color: rgba(255,255,255,0.15);
+      }
+      .translation {
+        padding: 1em;
+        background-color: rgba(255,255,255,0.25);
+      }
+    }
+  }
 
 }
