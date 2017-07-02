@@ -1,11 +1,13 @@
 @import "reset";
 
-html, body {
+body {
   background-color: #EE9E36;
   color: white;
   font-family: Helvetica, Arial, _sans;
   background-image: image-url('background.png');
   background-size: cover;
+  margin: 0;
+  padding: 0;
 }
 
 ul, ol, li {
@@ -71,6 +73,7 @@ li {
   font-size: 0.7em;
   color: rgba(255,255,255,0.5);
   margin-top: 2em;
+  margin-bottom: 2em;
   a, a:visited {
     color: rgba(255,255,255,0.5);
   }
