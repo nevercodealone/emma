@@ -10,6 +10,12 @@ class Backend::PhrasesController < Backend::BackendController
     @phrase = @category.phrases.new
   end
 
+  def show
+    @languages = Language.all
+    @category = Category.find(params[:category_id])
+    @phrase = Phrase.find(params[:id])
+  end
+
   def create
     @category = Category.find(params[:category_id])
     @phrase = @category.phrases.new(phrase_params)
@@ -47,6 +53,14 @@ class Backend::PhrasesController < Backend::BackendController
     else
       redirect_to backend_category_phrases_path(@category), error: "Can't delete Phrase"
     end
+  end
+
+  def update_translations
+    @category = Category.find(params[:category_id])
+    @phrase = @category.phrases.find(params[:id])
+    @phrase.update_translations
+
+    redirect_to backend_category_phrases_path(@category), notice: "Translations generated"
   end
 
   private
