@@ -1,6 +1,6 @@
 class Phrase < ApplicationRecord
   belongs_to :category
-  belongs_to :language
+  has_many :translations
 
   before_save :fill_translation
 
@@ -17,4 +17,3 @@ class Phrase < ApplicationRecord
     true
   end
 end
-
