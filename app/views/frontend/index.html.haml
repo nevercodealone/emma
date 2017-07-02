@@ -6,9 +6,13 @@
           %h2
             = category.name
           %ol
-            - category.phrases.where(language: current_language).each do |phrase|
+            - category.phrases.each do |phrase|
               %li
                 .text
                   = phrase.text
                 .translation
-                  = phrase.translation
+                  - translation = phrase.translations.where(language: current_language).first
+                  - if translation
+                    = translation.text
+                  - else
+                    = "Keine Übersetzung"
