@@ -1,3 +1,3 @@
 class Language < ApplicationRecord
-  has_many :phrases
+  has_many :translations
 end
