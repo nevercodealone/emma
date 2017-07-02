@@ -1,0 +1,10 @@
+= form_for [:backend, category, phrase, translation] do |f|
+  %ul
+    %li
+      = f.label :text
+      = f.text_field :text
+    %li
+      = f.label :laguage
+      = f.select(:language_id, languages.all.collect {|l| [l.name, l.id]})
+    %li
+      = f.submit

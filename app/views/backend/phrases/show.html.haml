@@ -1,0 +1,25 @@
+%h1
+  = @phrase.text
+
+%h2
+  Übersetungen
+
+%table
+  %thead
+    %tr
+      %th
+        Id
+      %th
+        Text
+      %th
+        Funktionen
+  %tbody
+    - @phrase.translations.each do |translation|
+      %tr
+        %td
+          = translation.id
+        %td
+          = translation.text
+        %td
+          = link_to 'edit', edit_backend_category_phrase_translation_path(@category, @phrase, translation)
+          = link_to 'delete', backend_category_phrase_translation_path(@category, @phrase, translation), method: "delete", data: { confirm: "Orly?" }

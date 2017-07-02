@@ -13,21 +13,14 @@
         Id
       %th
         Text
-      %th
-        Übersetzung
-      %th
-        Sprache
   %tbody
     - @phrases.each do |phrase|
       %tr
         %td
           = phrase.id
         %td
-          = phrase.text
+          = link_to phrase.text, backend_category_phrase_path(@category, phrase)
         %td
-          = phrase.translation
-        %td
-          = phrase.language.name
-        %td
+          = link_to 'update translations', update_translations_backend_category_phrase_path(@category, phrase), method: 'post'
           = link_to 'edit', edit_backend_category_phrase_path(@category, phrase)
           = link_to 'delete', backend_category_phrase_path(@category, phrase), method: "delete", data: { confirm: "Orly?" }
