@@ -1,7 +1,7 @@
-FROM ruby:2.4-slim
+FROM starefossen/ruby-node
 MAINTAINER Sebastian Deutsch <sebastian.deutsch@9elements.com>
 RUN apt-get update && apt-get install -qq -y --no-install-recommends \
-      build-essential nodejs libpq-dev \
+      build-essential libpq-dev \
       imagemagick joe nano \
       curl netcat
 
