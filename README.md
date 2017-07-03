@@ -11,7 +11,6 @@ a valid Google API key in .env (do not commit) or environment 'GOOGLE_API_KEY'.
 ```
 docker-compose up --build
 # starts the devserver, point a browser to http://localhost:3000
-./bin/webpack-dev-server # starts webpack dev server in a seperate terminal window
 ```
 
 # License
