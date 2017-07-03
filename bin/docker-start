@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -x
+
+echo "Starting Rails"
+
+# killing previous pids
+rm /app/tmp/pids/server.pid
+
+# setup database and start puma
+RAILS_ENV=development bundle exec rake db:create
+RAILS_ENV=development bundle exec rake db:migrate
+RAILS_ENV=development bundle exec rake db:seed
+RAILS_ENV=development bundle exec rails s -p 3000 -b '0.0.0.0'
