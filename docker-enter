@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ `uname` == Darwin ]; then
+  # See docker-dev-entrypoint for the reason.
+  exec ./docker-enter-root "$@"
+fi
+
+if [ "$#" -eq 0 ]; then
+  set /bin/bash
+fi
+
+COLUMNS=`tput cols`
+LINES=`tput lines`
+
+environment="-e SSH_AUTH_SOCK=/tmp/ssh_agent_sock" # currently not possible to specify this in config file
+environment="$environment -e LINES=$LINES -e COLUMNS=$COLUMNS"
+docker exec $environment -i -t --user "$(id -u):$(id -g)" emma_app "$@"
