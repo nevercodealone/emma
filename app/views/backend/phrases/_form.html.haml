@@ -4,10 +4,4 @@
       = f.label :text
       = f.text_field :text
     %li
-      = f.label :translation
-      = f.text_field :translation
-    %li
-      = f.label :laguage
-      = f.select(:language_id, @languages.all.collect {|l| [l.name, l.id]})
-    %li
       = f.submit
