@@ -14,5 +14,7 @@
                   - translation = phrase.translations.where(language: current_language).first
                   - if translation
                     = translation.text
+                    %audio{ controls: true }
+                      %source{ src: "/tts/translation-#{translation.id}-#{current_language.key}.mp3", type: 'audio/mpeg' }
                   - else
                     = "Keine Übersetzung"
