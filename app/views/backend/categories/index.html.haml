@@ -1,24 +1,23 @@
-%h2
-  Kategorien
+%div.page-header
+  %h1
+    Kategorien
 
 = link_to 'Neue Kategorie anlegen', new_backend_category_path
 
-%table
-  %thead
-    %tr
-      %th
-        Id
-      %th
-        Name
-      %th
-        Funktionen
-  %tbody
-    - @categories.each do |category|
-      %tr
-        %td
-          = category.id
-        %td
-          = link_to category.name, backend_category_phrases_path(category)
-        %td
-          = link_to 'edit', edit_backend_category_path(category)
-          = link_to 'delete', backend_category_path(category), method: "delete", data: { confirm: "Orly?" }
+%div.row
+  %div.col-md-12
+    %table.table.table-hover
+      %thead
+        %tr
+          %th
+            Kategorie
+          %th
+            Funktionen
+      %tbody
+        - @categories.each do |category|
+          %tr
+            %td
+              = link_to category.name, backend_category_phrases_path(category)
+            %td
+              = link_to 'edit', edit_backend_category_path(category)
+              = link_to 'delete', backend_category_path(category), method: "delete", data: { confirm: "Orly?" }
