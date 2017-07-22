@@ -1,10 +1,9 @@
 = form_for [:backend, language] do |f|
-  %ul
-    %li
-      = f.label :name
-      = f.text_field :name
-    %li
-      = f.label :key
-      = f.text_field :key
-    %li
-      = f.submit
+  %div.form-group
+    %label{:for => "name"}
+      Sprache
+    = f.text_field :name
+    %label{:for => "key"}
+      Key
+    = f.text_field :key
+    = button_tag 'senden' , class: 'btn btn-primary' , type: :submit
