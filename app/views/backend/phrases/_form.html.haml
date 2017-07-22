@@ -1,7 +1,6 @@
 = form_for [:backend, category, phrase] do |f|
-  %ul
-    %li
-      = f.label :text
-      = f.text_field :text
-    %li
-      = f.submit
+  %div.form-group
+    %label{:for => "text"}
+      Phrase
+    = f.text_field :text
+    = button_tag 'senden' , class: 'btn btn-primary' , type: :submit
