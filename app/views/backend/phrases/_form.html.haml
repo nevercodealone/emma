@@ -2,5 +2,5 @@
   %div.form-group
     %label{:for => "text"}
       Phrase
-    = f.text_field :text
+    = f.text_field :text, :required => true
     = button_tag 'senden' , class: 'btn btn-primary' , type: :submit
