@@ -1,26 +1,25 @@
-%h2
-  Kategorie
-  = @category.name
+%div.page-header
+  %h1
+    Kategorie:
+    = @category.name
 
 = link_to 'Neue Phrase anlegen', new_backend_category_phrase_path(@category)
 
-%h3
-  Phrasen
-%table
-  %thead
-    %tr
-      %th
-        Id
-      %th
-        Text
-  %tbody
-    - @phrases.each do |phrase|
-      %tr
-        %td
-          = phrase.id
-        %td
-          = link_to phrase.text, backend_category_phrase_path(@category, phrase)
-        %td
-          = link_to 'update translations', update_translations_backend_category_phrase_path(@category, phrase), method: 'post'
-          = link_to 'edit', edit_backend_category_phrase_path(@category, phrase)
-          = link_to 'delete', backend_category_phrase_path(@category, phrase), method: "delete", data: { confirm: "Orly?" }
+%div.row
+  %div.col-md-12
+    %table.table.table-hover
+      %thead
+        %tr
+          %th
+            Phrase
+          %th
+            Funktionen
+      %tbody
+        - @phrases.each do |phrase|
+          %tr
+            %td
+              = link_to phrase.text, backend_category_phrase_path(@category, phrase)
+            %td
+              = link_to 'update translations', update_translations_backend_category_phrase_path(@category, phrase), method: 'post'
+              = link_to 'edit', edit_backend_category_phrase_path(@category, phrase)
+              = link_to 'delete', backend_category_phrase_path(@category, phrase), method: "delete", data: { confirm: "Orly?" }
