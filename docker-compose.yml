@@ -14,7 +14,7 @@ services:
     build: .
     command: bin/docker-webpack-dev-server
     ports:
-      - "8080:8080"
+      - "8090:8080"
     volumes:
       - '.:/app'
     env_file:
