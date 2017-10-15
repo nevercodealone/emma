@@ -15,6 +15,6 @@
                   - if translation
                     = translation.text
                     %audio{ controls: true }
-                      %source{ src: "/tts/translation-#{translation.id}-#{current_language.key}.mp3", type: 'audio/mpeg' }
+                      %source{ src: "/uploads/tts/translation-#{translation.id}-#{current_language.key}.mp3", type: 'audio/mpeg' }
                   - else
                     = "Keine Übersetzung"
