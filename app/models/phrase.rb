@@ -16,9 +16,7 @@ class Phrase < ApplicationRecord
         end
       end
 
-      puts File.join(Rails.root, 'public', 'tts', "translation-#{translation.id}-#{language.key}.mp3").to_s
-
-      translation.text.to_file(language.key, File.join(Rails.root, 'public', 'tts', "translation-#{translation.id}-#{language.key}.mp3").to_s)
+      translation.text.to_file(language.key, File.join(Rails.root, 'public', 'uploads', 'tts', "translation-#{translation.id}-#{language.key}.mp3").to_s)
     end
   end
 end
