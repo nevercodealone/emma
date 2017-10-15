@@ -3,7 +3,7 @@ set :rails_env, :production
 
 # There is duplication here with sync.rake!
 
-server = 'emma.9elements.io'
+server = 'emma.9elements.com'
 
 role :app, server, user: 'emma'
 role :web, server, user: 'emma'
