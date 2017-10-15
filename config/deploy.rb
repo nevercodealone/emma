@@ -14,15 +14,6 @@ set :linked_dirs, %w{public/uploads}
 namespace :deploy do
   desc "restart application"
 
-  task :copy_facebook_yml do
-    on primary fetch(:migration_role) do
-      within release_path do
-        execute :cp, release_path.join('config', 'facebook.yml.example'), release_path.join('config', 'facebook.yml')
-      end
-    end
-  end
-  before  'deploy:assets:precompile', 'deploy:copy_facebook_yml'
-
   task :restart do
     on primary fetch(:migration_role) do
        within release_path do
