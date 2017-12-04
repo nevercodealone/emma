@@ -13,10 +13,10 @@ class Phrase < ApplicationRecord
         if result.translations.count > 0
           translation.text = result.translations.first.translated_text
           translation.save
+
+          translation.text.to_file(language.key, File.join(Rails.root, 'public', 'uploads', 'tts', "translation-#{translation.id}-#{language.key}.mp3").to_s)
         end
       end
-
-      translation.text.to_file(language.key, File.join(Rails.root, 'public', 'uploads', 'tts', "translation-#{translation.id}-#{language.key}.mp3").to_s)
     end
   end
 end
