@@ -12,12 +12,16 @@
           %th
             Sprache
           %th
+            Key
+          %th
             Funktionen
       %tbody
         - @languages.each do |language|
           %tr
             %td
               = link_to language.name
+            %td
+              = link_to language.key
             %td
               = link_to 'edit', edit_backend_language_path(language)
               = link_to 'delete', backend_language_path(language), method: "delete", data: { confirm: "Sicher?" }
